@@ -736,7 +736,7 @@ Then use your favourite editor eg. `vim` to create a file named `Dockerfile` and
 following content: 
 
 ```
-FROM debian:wheezy 
+FROM debian:jessie-slim
 
 MAINTAINER <your name>
 
