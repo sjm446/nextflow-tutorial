@@ -723,7 +723,7 @@ Docker images are created by using a so called `Dockerfile` i.e. a simple text f
 containing a list of commands to be executed to assemble and configure the image
 with the software packages required.    
 
-In this step you will create a Docker image containing the Samtools tool.
+In this step you will create a Docker image containing the Salmon tool.
 
 
 Warning: the Docker build process automatically copies all files that are located in the 
@@ -810,7 +810,7 @@ Use the `exit` command to terminate the interactive session.
 
 Create an genome index file by running Salmon in the container. 
 
-Try to run Bowtie in the container with the following command: 
+Try to run Salmon in the container with the following command: 
 
 ```
 docker run my-image \
