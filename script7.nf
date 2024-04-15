@@ -7,6 +7,8 @@ params.multiqc = "$baseDir/multiqc"
 params.outdir = "results"
 
 log.info """\
+         Modified version to create tags
+         ===================================
          R N A S E Q - N F   P I P E L I N E    
          ===================================
          transcriptome: ${params.transcript}
