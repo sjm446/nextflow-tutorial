@@ -21,7 +21,8 @@ log.info """\
  * given the transcriptome file
  */
 process index {
-    
+    resourceLabels region: 'Dublin', user: 'Steve', project: 'project7a'
+
     input:
     path transcriptome from params.transcript
      
@@ -44,7 +45,8 @@ Channel
  * the index and the matched read files
  */
 process quantification {
-     
+    resourceLabels region: 'Dublin', user: 'Steve', project: 'project7b'
+
     input:
     path index from index_ch
     tuple val(pair_id), path(reads) from read_pairs_ch
@@ -62,6 +64,8 @@ process quantification {
  * Run fastQC to check quality of reads files
  */
 process fastqc {
+    resourceLabels region: 'Dublin', user: 'Steve', project: 'project7c'
+
     tag "FASTQC on $sample_id"
 
     input:
@@ -82,6 +86,7 @@ process fastqc {
  * and fastqc processes
  */
 process multiqc {
+    resourceLabels region: 'Dublin', user: 'Steve', project: 'project7d'
     publishDir params.outdir, mode:'copy'
 
     input:
