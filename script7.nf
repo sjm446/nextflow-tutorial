@@ -24,6 +24,7 @@ log.info """\
  */
 process index {
     resourceLabels region: 'Dublin', user: 'Steve', project: 'project7a'
+    label "stage=Index"
 
     input:
     path transcriptome from params.transcript
@@ -48,6 +49,7 @@ Channel
  */
 process quantification {
     resourceLabels region: 'Dublin', user: 'Steve', project: 'project7b'
+    label "stage=Quantification"
 
     input:
     path index from index_ch
@@ -67,6 +69,7 @@ process quantification {
  */
 process fastqc {
     resourceLabels region: 'Dublin', user: 'Steve', project: 'project7c'
+    label "stage=fastqc"
 
     tag "FASTQC on $sample_id"
 
@@ -89,6 +92,8 @@ process fastqc {
  */
 process multiqc {
     resourceLabels region: 'Dublin', user: 'Steve', project: 'project7d'
+    label "stage=multiqc"
+
     publishDir params.outdir, mode:'copy'
 
     input:
